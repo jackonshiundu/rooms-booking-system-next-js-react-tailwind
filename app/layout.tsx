@@ -1,4 +1,8 @@
+import './globals.css';
 import { Nunito } from 'next/font/google';
+import Navbar from './components/navbar/Navbar';
+import Clientonly from './components/Clientonly';
+import Modal from './components/modals/Modal';
 
 export const metadata = {
   title: 'Booking app',
@@ -15,7 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <Clientonly>
+          <Modal />
+          <Navbar />
+        </Clientonly>
+        {children}
+      </body>
     </html>
   );
 }
