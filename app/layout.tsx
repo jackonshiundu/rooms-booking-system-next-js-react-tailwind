@@ -2,7 +2,8 @@ import './globals.css';
 import { Nunito } from 'next/font/google';
 import Navbar from './components/navbar/Navbar';
 import Clientonly from './components/Clientonly';
-import Modal from './components/modals/Modal';
+import RegisterModals from './components/modals/RegisterModals';
+import TeasterProvider from './providers/TeasterProvider';
 
 export const metadata = {
   title: 'Booking app',
@@ -21,7 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <Clientonly>
-          <Modal actionLabel="Submit" title="Hello People" isOpen />
+          <TeasterProvider />
+          <RegisterModals />
           <Navbar />
         </Clientonly>
         {children}

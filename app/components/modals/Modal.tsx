@@ -12,7 +12,7 @@ interface Modalprops {
   actionLabel: string;
   disabled?: boolean;
   secondaryAction?: () => void;
-  secondaryLabel?: string;
+  secondaryActionLabel?: string;
 }
 const Modal: React.FC<Modalprops> = ({
   isOpen,
@@ -96,6 +96,7 @@ const Modal: React.FC<Modalprops> = ({
                     onClick={handleSubmit}
                   />
                 </div>
+                {footer}
               </div>
             </div>
           </div>
