@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <Clientonly>
-          <Modal />
+          <Modal actionLabel="Submit" title="Hello People" isOpen />
           <Navbar />
         </Clientonly>
         {children}
