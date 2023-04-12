@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar';
 import Clientonly from './components/Clientonly';
 import RegisterModals from './components/modals/RegisterModals';
 import TeasterProvider from './providers/TeasterProvider';
+import LoginModal from './components/modals/LoginModal';
 
 export const metadata = {
   title: 'Booking app',
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={font.className}>
         <Clientonly>
           <TeasterProvider />
+          <LoginModal />
           <RegisterModals />
           <Navbar />
         </Clientonly>
