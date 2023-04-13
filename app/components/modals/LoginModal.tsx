@@ -12,6 +12,7 @@ import Input from '../inputs/Input';
 import { toast } from 'react-hot-toast';
 import Button from '../Button';
 import useLoginModal from '@/app/hooks/useLoginModal';
+
 import { useRouter } from 'next/navigation';
 const LoginModal = () => {
   const router = useRouter();
@@ -77,22 +78,25 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn('google')}
       />
       <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
         <div className="flex flex-row items-center justify-center gap-2">
-          <div className="">Already have an account?</div>
+          <div className="">Dont&apos;t have an account?</div>
           <div
             className="text-neutral-800 cursor-pointer hover:underline "
-            onClick={registerModal.onClose}
+            onClick={() => {
+              registerModal.onOpen();
+              loginModal.onClose();
+            }}
           >
-            Login
+            Register
           </div>
         </div>
       </div>
